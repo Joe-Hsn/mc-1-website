@@ -1,0 +1,18 @@
+@import url("https://fonts.cdnfonts.com/css/dubai");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.rtl.min.css");
+:root {
+  --bs-font-sans-serif: "Dubai", sans-serif !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bs-light);
+  font-family: var(--bs-font-sans-serif);
+}

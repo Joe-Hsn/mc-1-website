@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مطعمنا - مطعم يفضله الجميع</title>
+    <!-- fontawesome's icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand text-warning" href="/">مطعمنا</a>
+        <div class="cta">
+          <a href="pages/sgin-up/signup.html" class="btn btn-outline-light">
+            إنشاء حساب
+          </a>
+          <a href="pages/sign-in/signin.html" class="btn btn-warning ms-md-3"
+            >تسجيل الدخول</a
+          >
+        </div>
+        <!-- بعد ما المستخدم يسجل دخول -->
+        <!-- <div class="dropdown">
+          <button
+            class="btn btn-warning dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user"></i>
+            الحساب
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-user-gear"></i> الملف الشخصي</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-shopping-cart"></i> عربة التسوق</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-message"></i>
+                المحادثة
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#logout">
+                <i class="fa-solid fa-sign-out-alt"></i>
+                تسجيل الخروج
+              </a>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </nav>
+    <main>
+      <!-- Hero section -->
+      <section class="hero">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 class="display-1">مطعمنا</h1>
+              <p class="lead">
+                اطلب اكلك من اي مطعم ويوصلك مكان ما كنت وبسعر مميز
+              </p>
+              <a href="#explore" class="btn btn-warning btn-lg">
+                تصفح جميع المطاعم والكافيهات
+              </a>
+            </div>
+          </div>
+        </div>
+        <img loading="lazy" src="/assets/images/pic-1.jpg" alt="pic-3" />
+      </section>
+      <!-- Our latest recipes -->
+      <section class="restaurants py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="mb-4">المطاعم الاكثر طلبا</h1>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card">
+                <img
+                  loading="lazy"
+                  src="/assets/images/banda.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    باندا الصيني
+                    <span class="badge text-bg-danger ms-1">جديد</span>
+                  </h5>
+                  <p class="card-text text-muted">
+                    نيولا باراياتيور. أيكسسيبتيور ساينت باراياتيورأوككايكات
+                    برواي كيوبايداتات نون برواي أيدي ايست لابوريوم
+                  </p>
+                </div>
+                <div class="card-body my-card-footer">
+                  <button class="btn btn-warning">عرض المزيد</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card">
+                <img
+                  loading="lazy"
+                  src="/assets/images/burgerking.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    برجر كينج
+                    <span class="badge text-bg-danger ms-1">جديد</span>
+                  </h5>
+                  <p class="card-text text-muted">
+                    أكس أيا كوممودو كونسيكيوات . ديواس أيوتي كونسيكيوات أريري
+                    دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت.
+                  </p>
+                </div>
+                <div class="card-body my-card-footer">
+                  <button class="btn btn-warning">عرض المزيد</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card">
+                <img
+                  loading="lazy"
+                  src="/assets/images/mac.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    ماكدونالدز
+                    <span class="badge text-bg-danger ms-1">جديد</span>
+                  </h5>
+                  <p class="card-text text-muted">
+                    ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير
+                    سيتاشن يللأمكو لابورأس نيسي يت أليكيوب
+                  </p>
+                </div>
+                <div class="card-body my-card-footer">
+                  <button class="btn btn-warning">عرض المزيد</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card">
+                <img
+                  loading="lazy"
+                  src="/assets/images/starbucks.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">ستاربكس</h5>
+                  <p class="card-text text-muted">
+                    لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج دولار
+                    سيت أميت ,كونسيكتيتور أليايت,سيت دو .
+                  </p>
+                </div>
+                <div class="card-body my-card-footer">
+                  <button class="btn btn-warning">عرض المزيد</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center">
+              <button class="btn btn-warning btn-lg px-4 my-5">
+                كل المطاعم <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer class="bg-dark text-light py-5">
+      <div class="container">
+        <div class="row text-center text-lg-start">
+          <div class="col-12 col-lg-6">
+            <p class="mb-3">
+              © 2023 - <span class="text-warning">مطعمنا</span> - مطعم يفضله
+              الجميع
+            </p>
+          </div>
+          <div class="col-12 col-lg-4">
+            <ul class="list-inline fs-4">
+              <li class="list-inline-item">
+                <a href="#facebook-account" class="text-light"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#twitter-account" class="text-light"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#instagram-account" class="text-light"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#linkedin-account" class="text-light"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="col-12 col-lg-2 d-flex justify-content-center justify-content-lg-start"
+          >
+            <button class="btn btn-outline-light rounded-circle" id="totop">
+              <i class="fa-solid fa-arrow-up"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- custom script -->
+    <script src="script.js"></script>
+    <!-- bootstrap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+      integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
