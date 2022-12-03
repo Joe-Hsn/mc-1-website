@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.ico"
+      type="image/x-icon"
+    />
     <title>تسجيل حساب - مطعمنا</title>
     <!-- fontawesome's icons -->
     <link
@@ -13,7 +18,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./signup.css" />
+    <link rel="stylesheet" href="./styles/signup.css" />
   </head>
   <body>
     <main>
@@ -49,7 +54,7 @@
                   class="form-control"
                   id="username"
                   name="username"
-                  placeholder="John Doe"
+                  placeholder="@john-doe"
                   required
                 />
                 <label for="username">اسم المستخدم</label>
@@ -61,7 +66,7 @@
                   class="form-control"
                   id="email"
                   name="email"
-                  placeholder="John Doe"
+                  placeholder="example@domain.com"
                   required
                 />
                 <label for="email">البريد الإلكتروني</label>
@@ -70,13 +75,35 @@
                 <input
                   dir="ltr"
                   type="password"
-                  class="form-control"
+                  class="form-control passinpt"
                   id="password"
                   name="password"
                   placeholder="Password"
                   required
+                  oninput="validatePassword()"
                 />
                 <label for="password">كلمة السر</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  dir="ltr"
+                  type="password"
+                  class="form-control passinpt"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="confirm password"
+                  required
+                  oninput="validatePassword()"
+                />
+                <label for="confirmPassword">تأكيد كلمة السر</label>
+              </div>
+              <div class="unmatched mb-3 text-danger d-none align-items-center">
+                <i class="fa-solid fa-times me-2"></i>
+                كلمة السر غير متطابقة!
+              </div>
+              <div class="matched mb-3 text-success d-none align-items-center">
+                <i class="fa-solid fa-check me-2"></i>
+                كلمة السر متطابقة!
               </div>
               <div class="form-check mb-3">
                 <input
@@ -113,7 +140,7 @@
             </form>
             <div class="forget-password mt-5">
               لديك حساب بالفعل؟
-              <a href="../sign-in/signin.html">تسجيل دخول</a>
+              <a href="./signin.html">تسجيل دخول</a>
             </div>
           </div>
         </div>
@@ -165,12 +192,32 @@
     ></script>
     <script>
       let togglePasswordVisibility = () => {
-        passwordInput = document.getElementById("password");
-        const type =
-          passwordInput.getAttribute("type") === "password"
-            ? "text"
-            : "password";
-        passwordInput.setAttribute("type", type);
+        passwordInputs = document.getElementsByClassName("passinpt");
+        for (let i = 0; i < passwordInputs.length; i++) {
+          if (passwordInputs[i].type === "password") {
+            passwordInputs[i].type = "text";
+          } else {
+            passwordInputs[i].type = "password";
+          }
+        }
+      };
+      let password = document.getElementById("password"),
+        confirm_password = document.getElementById("confirmPassword");
+      let validatePassword = () => {
+        let unmatched = document.querySelector(".unmatched"),
+          matched = document.querySelector(".matched");
+        if (password.value !== "" && confirm_password.value !== "") {
+          if (password.value !== confirmPassword.value) {
+            unmatched.classList.replace("d-none", "d-flex");
+            matched.classList.replace("d-flex", "d-none");
+          } else {
+            unmatched.classList.replace("d-flex", "d-none");
+            matched.classList.replace("d-none", "d-flex");
+          }
+        } else {
+          unmatched.classList.replace("d-flex", "d-none");
+          matched.classList.replace("d-flex", "d-none");
+        }
       };
     </script>
   </body>
