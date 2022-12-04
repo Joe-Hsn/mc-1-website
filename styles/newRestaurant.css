@@ -75,23 +75,40 @@ main .container {
 }
 .fileupload {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .fileupload {
+    flex-direction: row;
+  }
+}
+.logo-upload,
+.cover-upload {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.fileupload label {
+.logo-upload label,
+.cover-upload label {
   width: 100%;
+  max-width: 300px;
   cursor: pointer;
 }
-.fileupload img {
+.logo-upload img,
+.cover-upload img {
   width: 100%;
+  max-width: 300px;
   aspect-ratio: 1/1;
   object-fit: cover;
   border: 1px solid var(--bs-light);
   margin-bottom: 1rem;
   border-radius: 0.5rem;
 }
-.fileupload input[type="file"]::-webkit-file-upload-button {
-  display: none;
+.cover-upload img {
+  aspect-ratio: 16/9;
 }
 .container .row form textarea {
   resize: vertical;

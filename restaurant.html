@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>{{مطعم - كوفي}}</title>
+    <link rel="stylesheet" href="styles/restaurant.css" />
+    <!-- fontawesome's icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand text-warning" href="/">مطعمنا</a>
+        <!-- <div class="cta">
+          <a href="./signup.html" class="btn btn-outline-light"> إنشاء حساب </a>
+          <a href="./signin.html" class="btn btn-warning ms-md-3"
+            >تسجيل الدخول</a
+          >
+        </div> -->
+        <div class="dropdown">
+          <button
+            class="btn btn-warning dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user"></i>
+            الحساب
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-user-gear"></i> الملف الشخصي</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-shopping-cart"></i> عربة التسوق</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-message"></i>
+                المحادثة
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#logout">
+                <i class="fa-solid fa-sign-out-alt"></i>
+                تسجيل الخروج
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- header -->
+    <header class="hero">
+      <div class="container px-0 py-3">
+        <div class="row">
+          <div class="col">
+            <div class="cta-btns">
+              <a href="#chat" class="btn btn-success">
+                <i class="fa-solid fa-message me-md-1"></i>
+                <span class="d-none d-md-inline-block">المحادثة</span>
+              </a>
+              <a href="/newRestaurant.html" class="btn btn-light ms-1 ms-md-2">
+                <i class="fa-solid fa-edit me-md-1"></i>
+                <span class="d-none d-md-inline-block">تعديل</span>
+              </a>
+              <a href="/newRestaurant.html" class="btn btn-danger ms-1 ms-md-2">
+                <i class="fa-solid fa-trash-can me-md-1"></i>
+                <span class="d-none d-md-inline-block">حذف</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="assets/images/pic-7.jpg" alt="pic-7" class="bg-img" />
+    </header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mb-3">
+            <div class="brand__card">
+              <img
+                src="assets/images/burgerking.png"
+                alt="burgerking"
+                class="brand__card-logo img-thumbnail me-3"
+              />
+              <div class="brand__card-content">
+                <div class="brand__card-name h1 mb-md-3">برجر كينج</div>
+                <div class="brand__card-rate h3 mb-0">4.3/5</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <div class="row brand__disc">
+              <div class="col-12 col-md-8 brand__disc-disc mb-3">
+                <h2 class="mb-md-3">الوصف</h2>
+                <p class="fs-6 text-muted mb-0">
+                  برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة لوس
+                  أنجلوس، ويعتبر أكبر مطعم للبرجر في العالم، ويقدم أكثر من 11
+                  مليون وجبة برجر كينج في اليوم.
+                </p>
+              </div>
+              <div class="col-12 col-md-4 brand__disc-location mb-3">
+                <h2 class="mb-md-3">العنوان</h2>
+                <p class="brand__card-para fs-6 text-muted mb-0">
+                  123 شارع العباسية، الرياض، المملكة العربية السعودية
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <div class="d-grid">
+              <div
+                class="btn-group btn-group-lg"
+                role="group"
+                aria-label="زران للتبديل بين الوصفات والتعليقات"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="restaurant-tap"
+                  id="recipes-tap"
+                  autocomplete="off"
+                  checked
+                />
+                <label class="btn btn-outline-dark" for="recipes-tap"
+                  >الوصفات</label
+                >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="restaurant-tap"
+                  id="comments-tap"
+                  autocomplete="off"
+                />
+                <label class="btn btn-outline-dark" for="comments-tap"
+                  >التعليقات</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <div class="brand__products">
+              <h2 class="mb-md-3">وصفاتهم</h2>
+              <div class="row gy-3">
+                <div class="col-12 col-md-6 col-lg-4">
+                  <div class="card">
+                    <img
+                      src="assets/images/pic-5.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">برجر جامبو</h5>
+                      <p class="card-text text-muted">
+                        برجر جامبو هو نوع من البرجر الأمريكي المعروف، ويتميز
+                        بأنه يتكون من طبقة من الخبز البيضاء المحشو باللحم
+                        المفروم، والخضروات، والتوابل، والصلصة الخاصة بالبرجر.
+                      </p>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-grid">
+                        <a href="#" class="btn btn-warning">اطلب الان</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                  <div class="card">
+                    <img
+                      src="assets/images/pic-4.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">صحن اللحم المفروم</h5>
+                      <p class="card-text text-muted">
+                        برجر جامبو هو نوع من البرجر الأمريكي المعروف، ويتميز
+                        بأنه يتكون من طبقة من الخبز البيضاء المحشو باللحم
+                        المفروم، والخضروات، والتوابل، والصلصة الخاصة بالبرجر.
+                      </p>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-grid">
+                        <a href="#" class="btn btn-warning">اطلب الان</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                  <div class="card">
+                    <img
+                      src="assets/images/pic-6.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">صحن اللحم المفروم</h5>
+                      <p class="card-text text-muted">
+                        برجر جامبو هو نوع من البرجر الأمريكي المعروف، ويتميز
+                        بأنه يتكون من طبقة من الخبز البيضاء المحشو باللحم
+                        المفروم، والخضروات، والتوابل، والصلصة الخاصة بالبرجر.
+                      </p>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-grid">
+                        <a href="#" class="btn btn-warning">اطلب الان</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                  <div class="card">
+                    <img
+                      src="assets/images/pic-7.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">صحن اللحم المفروم</h5>
+                      <p class="card-text text-muted">
+                        برجر جامبو هو نوع من البرجر الأمريكي المعروف، ويتميز
+                        بأنه يتكون من طبقة من الخبز البيضاء المحشو باللحم
+                        المفروم، والخضروات، والتوابل، والصلصة الخاصة بالبرجر.
+                      </p>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-grid">
+                        <a href="#" class="btn btn-warning">اطلب الان</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-12 mb-3">
+            <div class="display-5 text-dark text-center fw-bold mb-3">
+              التعليقات
+            </div>
+            <form action="#" method="post" class="mb-3">
+              <div class="rate mb-3" dir="ltr">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="5 نجمات" aria-label="5 نجمات"></label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="4 نجمات" aria-label="4 نجمات"></label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="3 نجمات" aria-label="3 نجمات"></label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="نجمتين" aria-label="نجمتين"></label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="نجمة" aria-label="نجمة"></label>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control"
+                  placeholder="أكتب تعليقك هنا"
+                  id="comment"
+                  required
+                ></textarea>
+                <label for="comment" class="form-label">تعليقك</label>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-warning btn-lg">
+                  إرسال
+                </button>
+              </div>
+            </form>
+            <div class="comments">
+              <div class="comment__card">
+                <div class="comment__card-header mb-3">
+                  <img
+                    src="assets/images/per-3.jpg"
+                    alt="user"
+                    class="comment__card-img img-thumbnail me-3"
+                  />
+                  <div class="comment__card-content">
+                    <div class="comment__card-name h5 mb-0">انا</div>
+                    <div class="comment__card-date h6 mb-0">منذ ساعة</div>
+                    <div class="comment__card-rate h3 mb-0">
+                      3/5
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment__card-body mb-3">
+                  <p class="comment__card-para fs-6 text-muted mb-0">
+                    برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة لوس
+                    أنجلوس
+                  </p>
+                </div>
+                <div class="comment__card-footer">
+                  <span class="btn btn-sm btn-danger" aria-label="حذف">
+                    <i class="fa-solid fa-trash"></i>
+                    <span>حذف</span>
+                  </span>
+                </div>
+              </div>
+              <div class="comment__card">
+                <div class="comment__card-header mb-3">
+                  <img
+                    src="assets/images/per-2.jpg"
+                    alt="user"
+                    class="comment__card-img img-thumbnail me-3"
+                  />
+                  <div class="comment__card-content">
+                    <div class="comment__card-name h5 mb-0">محمد العبدالله</div>
+                    <div class="comment__card-date h6 mb-0">منذ 3 أيام</div>
+                    <div class="comment__card-rate h3 mb-0">
+                      4.3/5
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment__card-body mb-3">
+                  <p class="comment__card-para fs-6 text-muted mb-0">
+                    برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة لوس
+                    أنجلوس، ويعتبر أكبر مطعم للبرجر في العالم، ويقدم أكثر من 11
+                    مليون وجبة برجر كينج في اليوم.
+                  </p>
+                </div>
+              </div>
+              <div class="comment__card">
+                <div class="comment__card-header mb-3">
+                  <img
+                    src="assets/images/per-1.jpg"
+                    alt="user"
+                    class="comment__card-img img-thumbnail me-3"
+                  />
+                  <div class="comment__card-content">
+                    <div class="comment__card-name h5 mb-0">سارة علي</div>
+                    <div class="comment__card-date h6 mb-0">منذ 4 أيام</div>
+                    <div class="comment__card-rate h3 mb-0">
+                      4/5
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment__card-body mb-3">
+                  <p class="comment__card-para fs-6 text-muted mb-0">
+                    برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة لوس
+                    أنجلوس، ويعتبر أكبر مطعم للبرجر في العالم، ويقدم أكثر من 11
+                    مليون وجبة برجر كينج في اليوم. برجر كينج هو مطعم أمريكي
+                    للبرجر المتخصص، ويقع في مدينة لوس أنجلوس، ويعتبر أكبر مطعم
+                    للبرجر في العالم، ويقدم أكثر من 11 مليون وجبة برجر كينج في
+                    اليوم.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+      <div class="container">
+        <div class="row text-center text-lg-start">
+          <div class="col-12 col-lg-6">
+            <p class="mb-3">
+              © 2023 - <span class="text-warning">مطعمنا</span> - مطعم يفضله
+              الجميع
+            </p>
+          </div>
+          <div class="col-12 col-lg-4">
+            <ul class="list-inline fs-4">
+              <li class="list-inline-item">
+                <a href="#facebook-account" class="text-light"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#twitter-account" class="text-light"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#instagram-account" class="text-light"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#linkedin-account" class="text-light"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="col-12 col-lg-2 d-flex justify-content-center justify-content-lg-start"
+          >
+            <button class="btn btn-outline-light rounded-circle" id="totop">
+              <i class="fa-solid fa-arrow-up"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- bootstrap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+      integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      const toTop = document.querySelector("#totop");
+
+      toTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
