@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>Product</title>
+    <!-- fontawesome's icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/product.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand text-warning" href="/">مطعمنا</a>
+        <!-- <div class="cta">
+              <a href="./signup.html" class="btn btn-outline-light"> إنشاء حساب </a>
+              <a href="./signin.html" class="btn btn-warning ms-md-3"
+                >تسجيل الدخول</a
+              >
+            </div> -->
+        <div class="dropdown">
+          <button
+            class="btn btn-warning dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user"></i>
+            الحساب
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-user-gear"></i> الملف الشخصي</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-shopping-cart"></i> عربة التسوق</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-message"></i>
+                المحادثة
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#logout">
+                <i class="fa-solid fa-sign-out-alt"></i>
+                تسجيل الخروج
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="container py-5">
+        <div class="row mb-3">
+          <div class="col">
+            <div class="cta-btns">
+              <a href="#chat" class="btn btn-success">
+                <i class="fa-solid fa-message me-md-1"></i>
+                <span class="d-none d-md-inline-block">المحادثة</span>
+              </a>
+              <a href="/newRestaurant.html" class="btn btn-dark ms-1 ms-md-2">
+                <i class="fa-solid fa-edit me-md-1"></i>
+                <span class="d-none d-md-inline-block">تعديل</span>
+              </a>
+              <a href="/newRestaurant.html" class="btn btn-danger ms-1 ms-md-2">
+                <i class="fa-solid fa-trash-can me-md-1"></i>
+                <span class="d-none d-md-inline-block">حذف</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row gy-3 mb-5">
+          <div class="col-md-6 mb-5 mb-md-0">
+            <h1 class="product-name d-block d-md-none mb-3 text-center">
+              شطيرة الدجاج
+            </h1>
+            <div class="product-img">
+              <img
+                src="assets/images/pic-3.jpg"
+                alt="product"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="product-info">
+              <h1 class="product-name d-none d-md-block">شطيرة الدجاج</h1>
+              <p class="product-description text-muted">
+                لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج
+                أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار
+                ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير
+                سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو
+                كونسيكيوات . ديواس أيوتي أريري دولار إن ريبريهينديرأيت
+                فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت نيولا
+                باراياتيور.
+              </p>
+              <div class="product-price mb-2">
+                <span id="price">20</span>
+                <span>ريال</span>
+              </div>
+              <div class="product-quantity mb-2">
+                <button
+                  id="minus"
+                  class="btn btn-warning me-3"
+                  aria-label="نقص وحدة"
+                >
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input
+                  id="quantityInput"
+                  type="number"
+                  inputmode="numeric"
+                  min="1"
+                  value="1"
+                />
+                <button
+                  id="plus"
+                  class="btn btn-warning ms-3"
+                  aria-label="اضف وحدة"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+              <div class="quantity-feedback text-danger w-100 fs-3 d-none">
+                اقنعني انت كيف؟ حط رقم زي الناس
+              </div>
+              <div class="product-total mb-3">
+                <span>المجموع</span>
+                <span id="total">20</span>
+                <span>ريال</span>
+              </div>
+              <div class="d-grid">
+                <button id="cartBtn" class="btn btn-lg btn-warning">
+                  إضافة إلى العربة
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mb-3">
+            <div class="display-5 text-dark text-center fw-bold mb-3">
+              التعليقات
+            </div>
+            <form action="#" method="post" class="mb-3">
+              <div class="rate mb-3" dir="ltr">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="5 نجمات" aria-label="5 نجمات"></label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="4 نجمات" aria-label="4 نجمات"></label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="3 نجمات" aria-label="3 نجمات"></label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="نجمتين" aria-label="نجمتين"></label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="نجمة" aria-label="نجمة"></label>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control"
+                  placeholder="أكتب تعليقك هنا"
+                  id="comment"
+                  required
+                ></textarea>
+                <label for="comment" class="form-label">تعليقك</label>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-warning btn-lg">
+                  إرسال
+                </button>
+              </div>
+            </form>
+            <div class="comments">
+              <div class="comment__card">
+                <div class="comment__card-header mb-3">
+                  <img
+                    src="assets/images/per-3.jpg"
+                    alt="user"
+                    class="comment__card-img img-thumbnail me-3"
+                  />
+                  <div class="comment__card-content">
+                    <div class="comment__card-name h5 mb-0">انا</div>
+                    <div class="comment__card-date h6 mb-0">منذ ساعة</div>
+                    <div class="comment__card-rate h3 mb-0">
+                      3/5
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment__card-body mb-3">
+                  <p class="comment__card-para fs-6 text-muted mb-0">
+                    برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة لوس
+                    أنجلوس
+                  </p>
+                </div>
+                <div class="comment__card-footer">
+                  <span class="btn btn-sm btn-danger" aria-label="حذف">
+                    <i class="fa-solid fa-trash"></i>
+                    <span>حذف</span>
+                  </span>
+                </div>
+              </div>
+              <div class="comment__card">
+                <div class="comment__card-header mb-3">
+                  <img
+                    src="assets/images/per-2.jpg"
+                    alt="user"
+                    class="comment__card-img img-thumbnail me-3"
+                  />
+                  <div class="comment__card-content">
+                    <div class="comment__card-name h5 mb-0">محمد العبدالله</div>
+                    <div class="comment__card-date h6 mb-0">منذ 3 أيام</div>
+                    <div class="comment__card-rate h3 mb-0">
+                      4.3/5
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment__card-body mb-3">
+                  <p class="comment__card-para fs-6 text-muted mb-0">
+                    برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة لوس
+                    أنجلوس، ويعتبر أكبر مطعم للبرجر في العالم، ويقدم أكثر من 11
+                    مليون وجبة برجر كينج في اليوم.
+                  </p>
+                </div>
+              </div>
+              <div class="comment__card">
+                <div class="comment__card-header mb-3">
+                  <img
+                    src="assets/images/per-1.jpg"
+                    alt="user"
+                    class="comment__card-img img-thumbnail me-3"
+                  />
+                  <div class="comment__card-content">
+                    <div class="comment__card-name h5 mb-0">سارة علي</div>
+                    <div class="comment__card-date h6 mb-0">منذ 4 أيام</div>
+                    <div class="comment__card-rate h3 mb-0">
+                      4/5
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment__card-body mb-3">
+                  <p class="comment__card-para fs-6 text-muted mb-0">
+                    برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة لوس
+                    أنجلوس، ويعتبر أكبر مطعم للبرجر في العالم، ويقدم أكثر من 11
+                    مليون وجبة برجر كينج في اليوم. برجر كينج هو مطعم أمريكي
+                    للبرجر المتخصص، ويقع في مدينة لوس أنجلوس، ويعتبر أكبر مطعم
+                    للبرجر في العالم، ويقدم أكثر من 11 مليون وجبة برجر كينج في
+                    اليوم.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-dark text-light py-5">
+      <div class="container">
+        <div class="row text-center text-lg-start">
+          <div class="col-12 col-lg-6">
+            <p class="mb-3">
+              © 2023 - <span class="text-warning">مطعمنا</span> - مطعم يفضله
+              الجميع
+            </p>
+          </div>
+          <div class="col-12 col-lg-4">
+            <ul class="list-inline fs-4">
+              <li class="list-inline-item">
+                <a href="#facebook-account" class="text-light"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#twitter-account" class="text-light"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#instagram-account" class="text-light"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#linkedin-account" class="text-light"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="col-12 col-lg-2 d-flex justify-content-center justify-content-lg-start"
+          >
+            <button class="btn btn-outline-light rounded-circle" id="totop">
+              <i class="fa-solid fa-arrow-up"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- bootstrap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+      integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      const toTop = document.querySelector("#totop");
+      toTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+      let price = document.querySelector("#price"),
+        quantity = document.querySelector("#quantityInput"),
+        total = document.querySelector("#total"),
+        plus = document.querySelector("#plus"),
+        minus = document.querySelector("#minus"),
+        cartBtn = document.querySelector("#cartBtn"),
+        feedback = document.querySelector(".quantity-feedback");
+      plus.addEventListener("click", () => {
+        quantity.value++;
+        total.innerHTML = price.innerHTML * quantity.value;
+      });
+      minus.addEventListener("click", () => {
+        if (quantity.value > 1) {
+          quantity.value--;
+          total.innerHTML = price.innerHTML * quantity.value;
+        }
+      });
+      quantity.addEventListener("input", () => {
+        total.innerHTML = price.innerHTML * quantity.value;
+      });
+      cartBtn.addEventListener("click", () => {
+        if (quantity.value < 0 || quantity.value == 0 || quantity.value == "") {
+          alert("الرجاء ادخال الكمية");
+        }
+      });
+    </script>
+  </body>
+</html>
