@@ -1,0 +1,97 @@
+@import url("https://fonts.cdnfonts.com/css/dubai");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.rtl.min.css");
+:root {
+  --bs-font-sans-serif: "Dubai", sans-serif !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  box-shadow: initial !important;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bs-light);
+  font-family: var(--bs-font-sans-serif);
+}
+p {
+  margin-bottom: 0;
+}
+/* navbar */
+.navbar .cta {
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar .cta .btn {
+  transform: scale(0.8);
+}
+@media (min-width: 768px) {
+  .navbar .cta .btn {
+    transform: scale(1);
+  }
+}
+.navbar .dropdown .dropdown-toggle i {
+  margin-left: 0.5rem;
+}
+.navbar .dropdown .dropdown-menu {
+  left: 0 !important;
+  right: auto;
+}
+.navbar .dropdown .dropdown-menu .dropdown-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.navbar .dropdown .dropdown-menu .dropdown-item i {
+  margin-left: 0.5rem;
+}
+/* card */
+.card-body:has(.chat) {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.card-body {
+  position: relative !important;
+}
+.chat-message {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.chat-message-meta {
+  width: 100%;
+  text-align: end;
+}
+.chat-message-other::before {
+  content: attr(data-name);
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  color: var(--bs-secondary);
+}
+/* #toLastMsg { */
+/* position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 100;
+} */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Footer */
+footer .list-inline-item a {
+  color: var(--bs-warning) !important;
+}
+footer .list-inline-item a:hover {
+  color: var(--bs-light) !important;
+}

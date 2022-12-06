@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>المحادثة</title>
+    <!-- fontawesome's icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/chat.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand text-warning" href="/">مطعمنا</a>
+        <!-- <div class="cta">
+                    <a href="./signup.html" class="btn btn-outline-light"> إنشاء حساب </a>
+                    <a href="./signin.html" class="btn btn-warning ms-md-3"
+                      >تسجيل الدخول</a
+                    >
+                  </div> -->
+        <div class="dropdown">
+          <button
+            class="btn btn-warning dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user"></i>
+            الحساب
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-user-gear"></i> الملف الشخصي</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-shopping-cart"></i> عربة التسوق</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-message"></i>
+                المحادثة
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#logout">
+                <i class="fa-solid fa-sign-out-alt"></i>
+                تسجيل الخروج
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <main>
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title mb-0">محادثة 1</h5>
+              </div>
+              <div class="card-body">
+                <div class="chat">
+                  <div class="chat-message">
+                    <div class="chat-message-content">
+                      <p>محادثة 1</p>
+                    </div>
+                    <div class="chat-message-meta">
+                      <span class="text-muted">02:21</span>
+                    </div>
+                  </div>
+                  <div
+                    class="chat-message chat-message-other"
+                    data-name="مطعم فلان"
+                  >
+                    <div class="chat-message-content">
+                      <p>
+                        لوريم إيبسوم هو نص شكلي للطباعة والتنضيد. وقد استخدم منذ
+                        القرن الخامس عشر، عندما قام بطباعة مجلة مقاطعات للأغراض
+                      </p>
+                    </div>
+                    <div class="chat-message-meta">
+                      <span class="text-muted">07:10</span>
+                    </div>
+                  </div>
+                  <div class="chat-message">
+                    <div class="chat-message-content">
+                      <p>محادثة 1</p>
+                    </div>
+                    <div class="chat-message-meta">
+                      <span class="text-muted">09:31</span>
+                    </div>
+                  </div>
+                  <div
+                    class="chat-message chat-message-other"
+                    data-name="مطعم فلان"
+                  >
+                    <div class="chat-message-content">
+                      <p>محادثة 1</p>
+                    </div>
+                    <div class="chat-message-meta">
+                      <span class="text-muted">02:21</span>
+                    </div>
+                  </div>
+                  <div class="chat-message">
+                    <div class="chat-message-content">
+                      <p>
+                        لوريم إيبسوم هو نص شكلي للطباعة والتنضيد. وقد استخدم منذ
+                        القرن الخامس عشر، عندما قام بطباعة مجلة مقاطعات للأغراض
+                      </p>
+                    </div>
+                    <div class="chat-message-meta">
+                      <span class="text-muted">04:11</span>
+                    </div>
+                  </div>
+                  <div
+                    class="chat-message chat-message-other"
+                    data-name="مطعم فلان"
+                  >
+                    <div class="chat-message-content">
+                      <p>محادثة 1</p>
+                    </div>
+                    <div class="chat-message-meta">
+                      <span class="text-muted">01:20</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="input-group input-group-lg">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="اكتب رسالتك هنا"
+                  />
+                  <button class="btn btn-warning" type="submit">ارسال</button>
+                </div>
+                <button
+                  id="toLastMsg"
+                  class="btn btn-dark btn-lg ms-2 d-none d-md-block"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-dark text-light py-4">
+      <div class="container">
+        <div class="row text-center text-lg-start">
+          <div class="col-12 col-md-6">
+            <p class="mb-3 mb-md-0">
+              © 2023 - <span class="text-warning">مطعمنا</span> - مطعم يفضله
+              الجميع
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-lg-end">
+            <ul class="list-inline fs-4 mb-0">
+              <li class="list-inline-item">
+                <a href="#facebook-account" class="text-light"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#twitter-account" class="text-light"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#instagram-account" class="text-light"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#linkedin-account" class="text-light"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- bootstrap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+      integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- custom script -->
+    <script>
+      let cardBody = document.querySelector(".card-body");
+      cardBody.scrollTop = cardBody.scrollHeight;
+      // cardBody.srollBy(0, cardBody.scrollHeight);
+      // now to make the chat scroll to the bottom when the user send a message
+      let input = document.querySelector("input");
+      let button = document.querySelector(".btn[type='submit']");
+      button.addEventListener("click", function () {
+        if (input.value) {
+          let div = document.createElement("div");
+          div.classList.add("chat-message");
+          div.innerHTML = `
+            <div class="chat-message-content">
+              <p>${input.value}</p>
+            </div>
+            <div class="chat-message-meta">
+              <span class="text-muted text-end">الان</span>
+            </div>
+          `;
+          cardBody.querySelector(".chat").appendChild(div);
+          input.value = "";
+          cardBody.scrollTop = cardBody.scrollHeight;
+        }
+      });
+      // now to make the chat scroll to the bottom when the user click on the button
+      let toLastMsg = document.querySelector("#toLastMsg");
+      toLastMsg.addEventListener("click", function () {
+        cardBody.scrollTop = cardBody.scrollHeight;
+      });
+      // now to make the scroll behaior smooth
+      cardBody.style.scrollBehavior = "smooth";
+    </script>
+  </body>
+</html>

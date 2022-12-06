@@ -58,7 +58,6 @@ main .container {
   box-shadow: none !important;
 }
 /* Footer */
-/* footer */
 footer .list-inline-item a {
   color: var(--bs-warning) !important;
 }
