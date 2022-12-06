@@ -64,25 +64,41 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
-.chat-message-meta {
+.chat-message .chat-message-content {
+  flex: 1 1 100%;
+  padding-left: 30%;
+}
+.chat-message .chat-message-content p {
+  background-color: var(--bs-secondary);
+  color: var(--bs-light);
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border-bottom-right-radius: 0;
+}
+/* .chat-message-meta {
   width: 100%;
   text-align: end;
+} */
+.chat-message-other {
+  direction: ltr;
+  text-align: start;
+}
+.chat-message-other .chat-message-content {
+  padding-left: 0 !important;
+}
+.chat-message-other .chat-message-content p {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 1rem;
 }
 .chat-message-other::before {
-  content: attr(data-name);
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 100%;
   color: var(--bs-secondary);
 }
-/* #toLastMsg { */
-/* position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-  z-index: 100;
-} */
 .card-footer {
   display: flex;
   justify-content: space-between;
