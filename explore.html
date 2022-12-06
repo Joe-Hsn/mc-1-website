@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>تصفح المطاعم والمقاهي - مطعمنا</title>
+    <!-- fontawesome's icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/explore.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand text-warning" href="/">مطعمنا</a>
+        <!-- <div class="cta">
+                  <a href="./signup.html" class="btn btn-outline-light"> إنشاء حساب </a>
+                  <a href="./signin.html" class="btn btn-warning ms-md-3"
+                    >تسجيل الدخول</a
+                  >
+                </div> -->
+        <div class="dropdown">
+          <button
+            class="btn btn-warning dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user"></i>
+            الحساب
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-user-gear"></i> الملف الشخصي</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-shopping-cart"></i> عربة التسوق</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-message"></i>
+                المحادثة
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#logout">
+                <i class="fa-solid fa-sign-out-alt"></i>
+                تسجيل الخروج
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="text-center text-dark">تصفح المطاعم والمقاهي</h1>
+          </div>
+        </div>
+        <div class="row my-5">
+          <div class="col-12 col-md-8 offset-md-2">
+            <form action="#" method="post">
+              <div class="input-group input-group-lg">
+                <button class="btn btn-dark" type="button" id="filter">
+                  <i class="fa-solid fa-filter"></i>
+                </button>
+                <input
+                  type="search"
+                  name="q"
+                  class="form-control"
+                  placeholder="ابحث عن المطاعم والمقاهي المفضلة لك"
+                  aria-label="ابحث عن المطاعم والمقاهي المفضلة لك"
+                  aria-describedby="search"
+                />
+                <button class="btn btn-warning" type="submit" id="search">
+                  <i class="fa-solid fa-search"></i>
+                </button>
+              </div>
+              <div class="filters row">
+                <!-- filter btns -->
+                <div class="col-12 mt-3">
+                  <h5 class="mb-3">
+                    <span>تصنيف المطاعم والمقاهي ومتاجر الحلويات</span>
+                  </h5>
+                  <div class="d-grid">
+                    <div
+                      class="filters-group btn-group btn-group-lg"
+                      role="group"
+                      aria-label="تصنيف المطاعم والمقاهي ومتاجر الحلويات"
+                    >
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="restaurant-type"
+                        id="restaurant"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-dark" for="restaurant">
+                        <i class="fa-solid fa-utensils me-2"></i>
+                        <span>المطاعم</span>
+                      </label>
+
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="restaurant-type"
+                        id="cafe"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-dark" for="cafe">
+                        <i class="fa-solid fa-coffee me-2"></i>
+                        <span>المقاهي</span>
+                      </label>
+
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="restaurant-type"
+                        id="candyshop"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-dark" for="candyshop">
+                        <i class="fa-solid fa-candy-cane me-2"></i>
+                        <span>متاجر الحلويات</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <h5 class="mb-3">
+                    <span> الترتيب حسب: </span>
+                  </h5>
+                  <div class="d-grid">
+                    <div
+                      class="filters-group btn-group btn-group-lg"
+                      role="group"
+                      aria-label="تصنيف المطاعم والمقاهي ومتاجر الحلويات"
+                    >
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="sortby"
+                        id="most-rated"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-dark" for="most-rated">
+                        <span> الأكثر تقييما </span>
+                      </label>
+
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="sortby"
+                        id="most-ordered"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-dark" for="most-ordered">
+                        <span> الأكثر طلبا </span>
+                      </label>
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="sortby"
+                        id="nearest"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-outline-dark" for="nearest">
+                        <span> الأقرب </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row gy-3">
+          <div class="col-12">
+            <h2 class="text-center text-dark">المطاعم والمقاهي المفضلة</h2>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+              <img
+                src="assets/images/pic-7.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">مطعمنا</h5>
+                <p class="card-text text-muted">
+                  لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو نص
+                  شكلي للطباعة والتنضيد.
+                </p>
+                <div class="d-grid">
+                  <a href="#" class="btn btn-warning">تصفح</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+              <img
+                src="assets/images/pic-7.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">مطعمنا</h5>
+                <p class="card-text text-muted">
+                  لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو نص
+                  شكلي للطباعة والتنضيد.
+                </p>
+                <div class="d-grid">
+                  <a href="#" class="btn btn-warning">تصفح</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+              <img
+                src="assets/images/pic-7.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">مطعمنا</h5>
+                <p class="card-text text-muted">
+                  لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو نص
+                  شكلي للطباعة والتنضيد.
+                </p>
+                <div class="d-grid">
+                  <a href="#" class="btn btn-warning">تصفح</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+              <img
+                src="assets/images/pic-7.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">مطعمنا</h5>
+                <p class="card-text text-muted">
+                  لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو نص
+                  شكلي للطباعة والتنضيد.
+                </p>
+                <div class="d-grid">
+                  <a href="#" class="btn btn-warning">تصفح</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-dark text-light py-4">
+      <div class="container">
+        <div class="row text-center text-lg-start">
+          <div class="col-12 col-md-6">
+            <p class="mb-3 mb-md-0">
+              © 2023 - <span class="text-warning">مطعمنا</span> - مطعم يفضله
+              الجميع
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-lg-end">
+            <ul class="list-inline fs-4 mb-0">
+              <li class="list-inline-item">
+                <a href="#facebook-account" class="text-light"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#twitter-account" class="text-light"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#instagram-account" class="text-light"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#linkedin-account" class="text-light"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- bootstrap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+      integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      // now to set the height of filters container to auto back and forth when the user click on the filters button
+      const filtersBtn = document.querySelector("#filter");
+      const filtersContainer = document.querySelector(".filters");
+      const filtersContainerHeight = filtersContainer.offsetHeight;
+      filtersContainer.style.height = "0px";
+      filtersBtn.addEventListener("click", () => {
+        if (filtersContainer.style.height == "0px") {
+          filtersContainer.style.height = `auto`;
+        } else {
+          filtersContainer.style.height = "0px";
+        }
+      });
+      // now to replace the "btn-group" class with "btn-group-vertical" class only with elements with class "filters-group" dynamically when the window width is less than 768px
+      filtersBtn.addEventListener("click", () => {
+        const filtersGroups = document.querySelectorAll(".filters-group");
+        filtersGroups.forEach((filtersGroup) => {
+          if (
+            window.innerWidth < 768 &&
+            filtersGroup.classList.contains("btn-group")
+          ) {
+            filtersGroup.classList.replace("btn-group", "btn-group-vertical");
+          } else {
+            filtersGroup.classList.replace("btn-group-vertical", "btn-group");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

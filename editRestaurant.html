@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
       href="./assets/images/favicon.ico"
       type="image/x-icon"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>إضافة وجبة جديد - مطعمنا</title>
+    <title>تعديل معلومات المطعم - مطعمنا</title>
     <!-- fontawesome's icons -->
     <link
       rel="stylesheet"
@@ -18,7 +18,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="styles/newProduct.css" />
+    <link rel="stylesheet" href="styles/editRestaurant.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -26,11 +26,11 @@
       <div class="container">
         <a class="navbar-brand text-warning" href="/">مطعمنا</a>
         <!-- <div class="cta">
-              <a href="./signup.html" class="btn btn-outline-light"> إنشاء حساب </a>
-              <a href="./signin.html" class="btn btn-warning ms-md-3"
-                >تسجيل الدخول</a
-              >
-            </div> -->
+          <a href="./signup.html" class="btn btn-outline-light"> إنشاء حساب </a>
+          <a href="./signin.html" class="btn btn-warning ms-md-3"
+            >تسجيل الدخول</a
+          >
+        </div> -->
         <div class="dropdown">
           <button
             class="btn btn-warning dropdown-toggle"
@@ -75,69 +75,76 @@
           <div class="col">
             <form action="#" method="post">
               <div class="title h3 mb-5">
-                <i class="fa-solid fa-plus me-1"></i>
-                اضافة وجبة جديدة
+                <i class="fa-solid fa-edit me-1"></i>
+                تعديل معلومات المطعم
               </div>
-              <div class="fileupload mb-3">
-                <span class="h5 mb-3">ارفع صورة الوجبة</span>
-                <label for="meal-picture">
-                  <img
-                    id="mealPicture"
-                    src="assets/images/image-placeholder.png"
-                    alt="new meal"
+              <div class="fileupload">
+                <div class="logo-upload mb-3">
+                  <span class="h5 mb-3">ارفع شعارك</span>
+                  <label for="logo">
+                    <img
+                      id="logoUpload"
+                      src="assets/images/image-placeholder.png"
+                      alt="new logo"
+                    />
+                  </label>
+                  <span id="logoname"></span>
+                  <span id="logosize"></span>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    name="image"
+                    class="d-none"
+                    id="logo"
+                    onchange="renderLogo(event)"
+                    multiple="false"
+                    required
                   />
-                </label>
-                <span id="meal-name"></span>
-                <span id="meal-size"></span>
-                <input
-                  type="file"
-                  accept="image/*"
-                  name="meal"
-                  class="d-none"
-                  id="meal-picture"
-                  onchange="renderMeal(event)"
-                  multiple="false"
-                  required
-                />
+                </div>
+                <div class="cover-upload mb-3">
+                  <span class="h5 mb-3">ارفع غلافك</span>
+                  <label for="cover">
+                    <img
+                      id="coverUpload"
+                      src="assets/images/image-placeholder.png"
+                      alt="new logo"
+                    />
+                  </label>
+                  <span id="covername"></span>
+                  <span id="coversize"></span>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    name="cover"
+                    class="d-none"
+                    id="cover"
+                    onchange="rendercover(event)"
+                    multiple="false"
+                    required
+                  />
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
                   type="text"
                   class="form-control"
-                  id="mealName"
-                  name="mealName"
-                  placeholder="مثال: الشاورما"
+                  id="restaurantName"
+                  name="restaurantName"
+                  placeholder="مثال: مطعمنا"
                   required
                 />
-                <label for="mealName">اسم الوجبة</label>
+                <label for="restaurantName">اسم المطعم</label>
               </div>
               <div class="form-floating mb-3">
                 <input
-                  type="number"
-                  inputmode="numeric"
-                  min="1"
+                  type="text"
                   class="form-control"
-                  id="mealPrice"
-                  name="mealPrice"
-                  placeholder="مثال: 10 ريال"
+                  id="restaurantLocation"
+                  name="restaurantLocation"
+                  placeholder="مثال: شارع الجامعة, الرياض, المملكة العربية السعودية"
                   required
                 />
-                <label for="mealPrice">سعر الوجبة</label>
-              </div>
-              <div class="form-floating mb-3">
-                <select
-                  class="form-select"
-                  id="meal-type"
-                  aria-label="اختر نوع الوجبة"
-                  required
-                >
-                  <option selected>طلبية كاملة</option>
-                  <option value="شطيرة">شطيرة</option>
-                  <option value="مشروب">مشروب</option>
-                  <option value="حلوي">حلوي</option>
-                  <option value="وجبة عائلية">وجبة عائلية</option>
-                </select>
-                <label for="meal-type">اختر نوع الوجبة</label>
+                <label for="restaurantLocation">مكان المطعم</label>
               </div>
               <div class="form-floating mb-3">
                 <textarea
@@ -148,11 +155,31 @@
                   placeholder="مثال: مطعمنا هو مطعم مميز يقدم العديد من الوجبات الشهية"
                   required
                 ></textarea>
-                <label for="restaurantDisc">وصف الوجبة</label>
+                <label for="restaurantDisc">وصف المطعم</label>
               </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="restaurantSlung"
+                  name="restaurantSlung"
+                  placeholder="مثال: مطعمنا هو مطعم مميز مثل زوقك"
+                  required
+                />
+                <label for="restaurantSlung">شعار المطعم </label>
+              </div>
+              <select
+                class="form-select form-select-lg mb-3"
+                aria-label=".form-select-lg category"
+              >
+                <option selected>اختر تصنيف المطعم</option>
+                <option value="1">مطعم</option>
+                <option value="2">كافي</option>
+                <option value="3">بلايستيشن</option>
+              </select>
               <div class="d-grid">
                 <button type="submit" class="btn btn-warning btn-lg">
-                  إضافة وجبة
+                  إضافة مطعم
                 </button>
               </div>
             </form>
@@ -205,10 +232,10 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
-      let renderMeal = (e) => {
-        let image = document.getElementById("mealPicture"),
-          filename = document.getElementById("meal-name"),
-          filesize = document.getElementById("meal-size");
+      let renderLogo = (e) => {
+        let image = document.getElementById("logoUpload"),
+          filename = document.getElementById("logoname"),
+          filesize = document.getElementById("logosize");
         image.src = URL.createObjectURL(e.target.files[0]);
         filename.innerHTML = e.target.files[0].name;
         let sizeInKB = e.target.files[0].size / 1000;
@@ -217,13 +244,18 @@
             ? `${(sizeInKB / 1024).toFixed(2)} MB`
             : `${sizeInKB.toFixed(2)} KB`;
       };
-      let mealPrice = document.getElementById("mealPrice");
-      mealPrice.addEventListener("input", (e) => {
-        let value = e.target.value;
-        if (value.length > 1 && value[0] == 0) {
-          e.target.value = value.slice(1);
-        }
-      });
+      let rendercover = (e) => {
+        let image = document.getElementById("coverUpload"),
+          filename = document.getElementById("covername"),
+          filesize = document.getElementById("coversize");
+        image.src = URL.createObjectURL(e.target.files[0]);
+        filename.innerHTML = e.target.files[0].name;
+        let sizeInKB = e.target.files[0].size / 1000;
+        filesize.innerHTML =
+          sizeInKB >= 1024
+            ? `${(sizeInKB / 1024).toFixed(2)} MB`
+            : `${sizeInKB.toFixed(2)} KB`;
+      };
     </script>
   </body>
 </html>
