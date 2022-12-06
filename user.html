@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>صفحة المستخدم - مطعمنا</title>
+    <!-- fontawesome's icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/user.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand text-warning" href="/">مطعمنا</a>
+        <!-- <div class="cta">
+                              <a href="./signup.html" class="btn btn-outline-light"> إنشاء حساب </a>
+                              <a href="./signin.html" class="btn btn-warning ms-md-3"
+                                >تسجيل الدخول</a
+                              >
+                            </div> -->
+        <div class="dropdown">
+          <button
+            class="btn btn-warning dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user"></i>
+            الحساب
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-user-gear"></i> الملف الشخصي</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-shopping-cart"></i> عربة التسوق</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-message"></i>
+                المحادثة
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#logout">
+                <i class="fa-solid fa-sign-out-alt"></i>
+                تسجيل الخروج
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <main>
+      <div class="container my-5">
+        <!-- CTA btn -->
+        <div class="row mb-3">
+          <div class="col">
+            <div class="cta-btns">
+              <a href="#chat" class="btn btn-success">
+                <i class="fa-solid fa-message me-md-1"></i>
+                <span class="d-none d-md-inline-block">المحادثة</span>
+              </a>
+              <a href="/newRestaurant.html" class="btn btn-dark ms-1 ms-md-2">
+                <i class="fa-solid fa-edit me-md-1"></i>
+                <span class="d-none d-md-inline-block">تعديل</span>
+              </a>
+              <a href="/newRestaurant.html" class="btn btn-danger ms-1 ms-md-2">
+                <i class="fa-solid fa-trash-can me-md-1"></i>
+                <span class="d-none d-md-inline-block">حذف</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- End CTA btn -->
+        <!-- Profile -->
+        <div class="row gy-3">
+          <!-- rside -->
+          <div class="col-12 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title text-center mb-3">
+                  <h4 class="mb-0">الملف الشخصي</h4>
+                </div>
+                <div class="card-text">
+                  <div class="profile">
+                    <div class="profile-image mb-3">
+                      <img
+                        class="rounded"
+                        src="https://picsum.photos/200/300"
+                        alt="profile image"
+                      />
+                    </div>
+                    <div class="profile-info">
+                      <h2 class="mb-0">محمد عبد الله</h2>
+                      <p class="text-muted mb-3">مستخدم</p>
+                    </div>
+                  </div>
+                  <div class="profile-details">
+                    <div class="profile-details-item">
+                      <h6 class="d-none d-md-block">
+                        <i class="fa-solid fa-envelope me-2"></i>
+                        البريد الإلكتروني
+                      </h6>
+                      <p>
+                        <a href="mailto:-">example@domain.com</a>
+                      </p>
+                    </div>
+                    <div class="profile-details-item">
+                      <h6 class="d-none d-md-block">
+                        <i class="fa-solid fa-phone me-2"></i>
+                        رقم الهاتف
+                      </h6>
+                      <p>
+                        <a href="tel:0123456789">0123456789</a>
+                      </p>
+                    </div>
+                    <div class="profile-details-item">
+                      <h6 class="d-none d-md-block">
+                        <i class="fa-solid fa-map-marker-alt me-2"></i>
+                        العنوان
+                      </h6>
+                      <p>الرياض - السعودية</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- lside -->
+          <div class="col-12 col-md-8">
+            <div class="d-grid mb-3">
+              <div
+                class="btn-group btn-group-lg"
+                role="group"
+                aria-label="ازرار للتبديل بن مطاعم ووجبات وتعليقات المستخدم"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="show"
+                  id="restaurants"
+                  autocomplete="off"
+                  checked
+                />
+                <label class="btn btn-outline-dark" for="restaurants">
+                  <i class="fa-solid fa-shop me-2"></i>
+                  <span class="d-none d-md-inline">المطاعم</span>
+                </label>
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="show"
+                  id="meals"
+                  autocomplete="off"
+                />
+                <label class="btn btn-outline-dark" for="meals">
+                  <i class="fa-solid fa-utensils me-2"></i>
+                  <span class="d-none d-md-inline">الوجبات</span>
+                </label>
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="show"
+                  id="comments"
+                  autocomplete="off"
+                />
+                <label class="btn btn-outline-dark" for="comments">
+                  <i class="fa-solid fa-message me-2"></i>
+                  <span class="d-none d-md-inline">التعليقات</span>
+                </label>
+              </div>
+            </div>
+            <!-- --------------------- comments ------------------------- -->
+            <!-- <div class="row">
+              <div class="col-12">
+                <div class="comments">
+                  <div class="comment__card">
+                    <div class="comment__card-header mb-3">
+                      <img
+                        src="assets/images/per-3.jpg"
+                        alt="user"
+                        class="comment__card-img img-thumbnail me-3"
+                      />
+                      <div class="comment__card-content">
+                        <div class="comment__card-name h5 mb-0">انا</div>
+                        <div class="comment__card-date h6 mb-0">منذ ساعة</div>
+                        <div class="comment__card-rate h3 mb-0">
+                          3/5
+                          <i class="fa-solid fa-star text-warning"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment__card-body mb-3">
+                      <p class="comment__card-para fs-6 text-muted mb-0">
+                        برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة
+                        لوس أنجلوس
+                      </p>
+                    </div>
+                  </div>
+                  <div class="comment__card">
+                    <div class="comment__card-header mb-3">
+                      <img
+                        src="assets/images/per-2.jpg"
+                        alt="user"
+                        class="comment__card-img img-thumbnail me-3"
+                      />
+                      <div class="comment__card-content">
+                        <div class="comment__card-name h5 mb-0">
+                          محمد العبدالله
+                        </div>
+                        <div class="comment__card-date h6 mb-0">منذ 3 أيام</div>
+                        <div class="comment__card-rate h3 mb-0">
+                          4.3/5
+                          <i class="fa-solid fa-star text-warning"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment__card-body mb-3">
+                      <p class="comment__card-para fs-6 text-muted mb-0">
+                        برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة
+                        لوس أنجلوس، ويعتبر أكبر مطعم للبرجر في العالم، ويقدم
+                        أكثر من 11 مليون وجبة برجر كينج في اليوم.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="comment__card">
+                    <div class="comment__card-header mb-3">
+                      <img
+                        src="assets/images/per-3.jpg"
+                        alt="user"
+                        class="comment__card-img img-thumbnail me-3"
+                      />
+                      <div class="comment__card-content">
+                        <div class="comment__card-name h5 mb-0">
+                          محمد العبدالله
+                        </div>
+                        <div class="comment__card-date h6 mb-0">منذ 3 أيام</div>
+                        <div class="comment__card-rate h3 mb-0">
+                          4.3/5
+                          <i class="fa-solid fa-star text-warning"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment__card-body mb-3">
+                      <p class="comment__card-para fs-6 text-muted mb-0">
+                        برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة
+                        لوس أنجلوس، ويعتبر أكبر مطعم للبرجر في العالم، ويقدم
+                        أكثر من 11 مليون وجبة برجر كينج في اليوم.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="comment__card">
+                    <div class="comment__card-header mb-3">
+                      <img
+                        src="assets/images/per-1.jpg"
+                        alt="user"
+                        class="comment__card-img img-thumbnail me-3"
+                      />
+                      <div class="comment__card-content">
+                        <div class="comment__card-name h5 mb-0">سارة علي</div>
+                        <div class="comment__card-date h6 mb-0">منذ 4 أيام</div>
+                        <div class="comment__card-rate h3 mb-0">
+                          4/5
+                          <i class="fa-solid fa-star text-warning"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment__card-body mb-3">
+                      <p class="comment__card-para fs-6 text-muted mb-0">
+                        برجر كينج هو مطعم أمريكي للبرجر المتخصص، ويقع في مدينة
+                        لوس أنجلوس، ويعتبر أكبر مطعم للبرجر في العالم، ويقدم
+                        أكثر من 11 مليون وجبة برجر كينج في اليوم. برجر كينج هو
+                        مطعم أمريكي للبرجر المتخصص، ويقع في مدينة لوس أنجلوس،
+                        ويعتبر أكبر مطعم للبرجر في العالم، ويقدم أكثر من 11
+                        مليون وجبة برجر كينج في اليوم.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- --------------------- comments ------------------------- -->
+            <!-- --------------------- meals ------------------------- -->
+            <!-- <div class="row gy-3">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="assets/images/pic-7.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">مطعمنا</h5>
+                    <p class="card-text text-muted">
+                      لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو
+                      نص شكلي للطباعة والتنضيد.
+                    </p>
+                    <div class="d-grid">
+                      <a href="#" class="btn btn-warning">تصفح</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="assets/images/pic-7.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">مطعمنا</h5>
+                    <p class="card-text text-muted">
+                      لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو
+                      نص شكلي للطباعة والتنضيد.
+                    </p>
+                    <div class="d-grid">
+                      <a href="#" class="btn btn-warning">تصفح</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="assets/images/pic-7.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">مطعمنا</h5>
+                    <p class="card-text text-muted">
+                      لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو
+                      نص شكلي للطباعة والتنضيد.
+                    </p>
+                    <div class="d-grid">
+                      <a href="#" class="btn btn-warning">تصفح</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="assets/images/pic-7.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">مطعمنا</h5>
+                    <p class="card-text text-muted">
+                      لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو
+                      نص شكلي للطباعة والتنضيد.
+                    </p>
+                    <div class="d-grid">
+                      <a href="#" class="btn btn-warning">تصفح</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- --------------------- meals ------------------------- -->
+            <!-- --------------------- restaurnats ------------------------- -->
+            <div class="row gy-3">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="assets/images/pic-7.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">مطعمنا</h5>
+                    <p class="card-text text-muted">
+                      لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو
+                      نص شكلي للطباعة والتنضيد.
+                    </p>
+                    <div class="d-grid">
+                      <a href="#" class="btn btn-warning">تصفح</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="assets/images/pic-7.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">مطعمنا</h5>
+                    <p class="card-text text-muted">
+                      لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو
+                      نص شكلي للطباعة والتنضيد.
+                    </p>
+                    <div class="d-grid">
+                      <a href="#" class="btn btn-warning">تصفح</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="assets/images/pic-7.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">مطعمنا</h5>
+                    <p class="card-text text-muted">
+                      لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو
+                      نص شكلي للطباعة والتنضيد.
+                    </p>
+                    <div class="d-grid">
+                      <a href="#" class="btn btn-warning">تصفح</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="assets/images/pic-7.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">مطعمنا</h5>
+                    <p class="card-text text-muted">
+                      لوريم ايبسوم هو نص شكلي للطباعة والتنضيد. لوريم ايبسوم هو
+                      نص شكلي للطباعة والتنضيد.
+                    </p>
+                    <div class="d-grid">
+                      <a href="#" class="btn btn-warning">تصفح</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- --------------------- restaurnats ------------------------- -->
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-dark text-light py-4">
+      <div class="container">
+        <div class="row text-center text-lg-start">
+          <div class="col-12 col-md-6">
+            <p class="mb-3 mb-md-0">
+              © 2023 - <span class="text-warning">مطعمنا</span> - مطعم يفضله
+              الجميع
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-lg-end">
+            <ul class="list-inline fs-4 mb-0">
+              <li class="list-inline-item">
+                <a href="#facebook-account" class="text-light"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#twitter-account" class="text-light"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#instagram-account" class="text-light"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#linkedin-account" class="text-light"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- bootstrap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+      integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- custom script -->
+    <script></script>
+  </body>
+</html>
