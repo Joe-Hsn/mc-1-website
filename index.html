@@ -19,7 +19,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- custom css -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -243,7 +243,15 @@
       </div>
     </footer>
     <!-- custom script -->
-    <script src="script.js"></script>
+    <script>
+      const toTop = document.querySelector("#totop");
+      toTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
     <!-- bootstrap -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
