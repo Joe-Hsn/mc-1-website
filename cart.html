@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>عربة التسوق - مطعمنا</title>
+    <!-- fontawesome's icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/cart.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+      <div class="container">
+        <a class="navbar-brand text-warning" href="/">مطعمنا</a>
+        <!-- <div class="cta">
+                          <a href="./signup.html" class="btn btn-outline-light"> إنشاء حساب </a>
+                          <a href="./signin.html" class="btn btn-warning ms-md-3"
+                            >تسجيل الدخول</a
+                          >
+                        </div> -->
+        <div class="dropdown">
+          <button
+            class="btn btn-warning dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user"></i>
+            الحساب
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-user-gear"></i> الملف الشخصي</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fa-solid fa-shopping-cart"></i> عربة التسوق</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-message"></i>
+                المحادثة
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#logout">
+                <i class="fa-solid fa-sign-out-alt"></i>
+                تسجيل الخروج
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <main>
+      <div class="container my-5">
+        <div class="row mb-5">
+          <div class="col-12">
+            <h1 class="text-center mb-0">عربة التسوق</h1>
+          </div>
+        </div>
+        <div class="row gy-3 mb-5">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+              <img
+                src="assets/images/pic-8.jpg"
+                class="card-img-top"
+                alt="food-1"
+              />
+              <div class="card-body">
+                <h3 class="card-title">وجبة كاملة</h3>
+                <p class="meal-discription card-text text-muted">
+                  وجبة كاملة مع السلطة والمشروب والحلويات والمقبلات
+                </p>
+                <div class="quantity h6">3 وحدة</div>
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="price h4">
+                    <span class="number">59.99</span>
+                    <span class="curroncy"> ريال </span>
+                  </div>
+                  <button class="btn btn-outline-danger" aria-label="حذف الطلب">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+              <img
+                src="assets/images/pic-7.jpg"
+                class="card-img-top"
+                alt="food-1"
+              />
+              <div class="card-body">
+                <h3 class="card-title">وجبة كاملة</h3>
+                <p class="meal-discription card-text text-muted">
+                  وجبة كاملة مع السلطة والمشروب والحلويات والمقبلات
+                </p>
+                <div class="quantity h6">5 وحدة</div>
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="price h4">
+                    <span class="number">100.00</span>
+                    <span class="curroncy"> ريال </span>
+                  </div>
+                  <button class="btn btn-outline-danger" aria-label="حذف الطلب">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+              <img
+                src="assets/images/pic-6.jpg"
+                class="card-img-top"
+                alt="food-1"
+              />
+              <div class="card-body">
+                <h3 class="card-title">برجر جامبو</h3>
+                <p class="meal-discription card-text text-muted">
+                  وجبة كاملة مع السلطة والمشروب والحلويات والمقبلات
+                </p>
+                <div class="quantity h6">1 وحدة</div>
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="price h4">
+                    <span class="number">30.00</span>
+                    <span class="curroncy"> ريال </span>
+                  </div>
+                  <button class="btn btn-outline-danger" aria-label="حذف الطلب">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+              <img
+                src="assets/images/pic-5.jpg"
+                class="card-img-top"
+                alt="food-1"
+              />
+              <div class="card-body">
+                <h3 class="card-title">شورما</h3>
+                <p class="meal-discription card-text text-muted">
+                  وجبة كاملة مع السلطة والمشروب والحلويات والمقبلات
+                </p>
+                <div class="quantity h6">2 وحدة</div>
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="price h4">
+                    <span class="number">69.99</span>
+                    <span class="curroncy"> ريال </span>
+                  </div>
+                  <button class="btn btn-outline-danger" aria-label="حذف الطلب">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title mb-0 text-muted">المجموع</h5>
+              </div>
+              <div
+                class="card-body d-flex align-items-center justify-content-between"
+              >
+                <span class="total h4">
+                  <span id="total-price">100</span>
+                  ريال
+                </span>
+                <button class="btn btn-warning">تأكيد الطلب</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-dark text-light py-4">
+      <div class="container">
+        <div class="row text-center text-lg-start">
+          <div class="col-12 col-md-6">
+            <p class="mb-3 mb-md-0">
+              © 2023 - <span class="text-warning">مطعمنا</span> - مطعم يفضله
+              الجميع
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-lg-end">
+            <ul class="list-inline fs-4 mb-0">
+              <li class="list-inline-item">
+                <a href="#facebook-account" class="text-light"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#twitter-account" class="text-light"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#instagram-account" class="text-light"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#linkedin-account" class="text-light"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- bootstrap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+      integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- custom script -->
+    <script>
+      // now to make the total price of the order dynamic by adding the price of each meal
+      // we will use the querySelectorAll method to select all the elements with the class name of number
+      // then we will loop through the elements and add the price of each meal to the total price
+      // we will use the forEach method to loop through the elements
+      // we will use the parseInt method to convert the price of each meal to an integer
+      // then we will add the price of each meal to the total price
+      // we will use the querySelector method to select the element with the id of total-price
+      // then we will use the innerText property to set the total price
+      const totalPrice = document.querySelector("#total-price");
+      const prices = document.querySelectorAll(".number");
+      let total = 0;
+      prices.forEach((price) => {
+        total += parseInt(price.innerText);
+      });
+      totalPrice.innerText = total;
+    </script>
+  </body>
+</html>
