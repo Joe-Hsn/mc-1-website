@@ -30,7 +30,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <form action="#" method="post">
+            <form action="#" method="post" class="needs-validation" novalidate>
               <div class="title h3 mb-3">
                 <i class="fa-solid fa-user-plus me-1"></i>
                 تسجيل حساب
@@ -46,6 +46,9 @@
                   required
                 />
                 <label for="name">الاسم</label>
+                <div class="invalid-feedback">
+                  لو سمحت ادخل املاء الاسم بشكل صحيح!
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -58,6 +61,9 @@
                   required
                 />
                 <label for="username">اسم المستخدم</label>
+                <div class="invalid-feedback">
+                  لو سمحت ادخل اسم المستخدم صالح!
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -70,6 +76,9 @@
                   required
                 />
                 <label for="email">البريد الإلكتروني</label>
+                <div class="invalid-feedback">
+                  لو سمحت ادخل البريد الالكتروني الخاص بك!
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -83,6 +92,7 @@
                   oninput="validatePassword()"
                 />
                 <label for="password">كلمة السر</label>
+                <div class="invalid-feedback">لو سمحت ادخل كلمة سر!</div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -96,6 +106,7 @@
                   oninput="validatePassword()"
                 />
                 <label for="confirmPassword">تأكيد كلمة السر</label>
+                <div class="invalid-feedback">لو سمحت اكد كلمة السر!</div>
               </div>
               <div class="unmatched mb-3 text-danger d-none align-items-center">
                 <i class="fa-solid fa-times me-2"></i>
@@ -131,6 +142,9 @@
                   <a href="#terms">الشروط</a>
                   و<a href="#conditions">الاحكام</a>
                 </label>
+                <div class="invalid-feedback">
+                  يجب الموافقة علي الشروط والاحكام لإنشاء حساب!
+                </div>
               </div>
               <div class="d-grid">
                 <button type="submit" class="btn btn-warning btn-lg">
@@ -219,6 +233,24 @@
           matched.classList.replace("d-flex", "d-none");
         }
       };
+      (() => {
+        "use strict";
+        // Fetch the form to apply custom Bootstrap validation styles to
+        const form = document.querySelector(".needs-validation");
+        // prevent submission
+        form.addEventListener(
+          "submit",
+          (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      })();
     </script>
   </body>
 </html>

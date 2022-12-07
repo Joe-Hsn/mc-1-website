@@ -80,14 +80,23 @@
                 <i class="fa-solid fa-comments me-md-1"></i>
                 <span class="d-none d-md-inline-block"> المحادثات </span>
               </a>
-              <a href="/newRestaurant.html" class="btn btn-dark ms-1 ms-md-2">
+              <a
+                href="/newRestaurant.html"
+                class="btn btn-dark ms-1 ms-md-2"
+                data-bs-toggle="modal"
+                data-bs-target="#edit-confirmation"
+              >
                 <i class="fa-solid fa-edit me-md-1"></i>
                 <span class="d-none d-md-inline-block">تعديل</span>
               </a>
-              <a href="/newRestaurant.html" class="btn btn-danger ms-1 ms-md-2">
+              <button
+                class="btn btn-danger ms-1 ms-md-2"
+                data-bs-toggle="modal"
+                data-bs-target="#delete-confirmation"
+              >
                 <i class="fa-solid fa-trash-can me-md-1"></i>
                 <span class="d-none d-md-inline-block">حذف</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -503,6 +512,70 @@
         </div>
       </div>
     </footer>
+    <!-- Modal for delete button -->
+    <div
+      class="modal fade"
+      id="delete-confirmation"
+      tabindex="-1"
+      aria-labelledby="تأكيد المستخدم علي حذف الصفحة"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body d-flex justify-content-end">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body fs-4">هل انت متأكد من حذف هذه الصفحة؟</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              رجوع
+            </button>
+            <button type="button" class="btn btn-danger px-3">نعم</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for edit button -->
+    <div
+      class="modal fade"
+      id="edit-confirmation"
+      tabindex="-1"
+      aria-labelledby="تأكيد المستخدم علي حذف الصفحة"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body d-flex justify-content-end">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body fs-4">هل انت متأكد من تعديل هذه الصفحة؟</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              رجوع
+            </button>
+            <button type="button" class="btn btn-success px-3">نعم</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- bootstrap -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
