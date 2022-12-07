@@ -100,6 +100,7 @@
                     multiple="false"
                     required
                   />
+                  <div class="invalid-feedback">يجب رفع صورة الشعار!</div>
                 </div>
                 <div class="cover-upload mb-3">
                   <span class="h5 mb-3">ارفع غلافك</span>
@@ -122,6 +123,7 @@
                     multiple="false"
                     required
                   />
+                  <div class="invalid-feedback">يجب رفع صورة غلاف!</div>
                 </div>
               </div>
               <div class="form-floating mb-3">
@@ -283,6 +285,23 @@
           false
         );
       })();
+      // now to make the border color of the image red when the validation fails
+      let logo = document.getElementById("logoUpload"),
+        cover = document.getElementById("coverUpload"),
+        submitBtn = document.querySelector("button[type='submit']"),
+        logoInput = document.getElementById("logo"),
+        coverInput = document.getElementById("cover");
+      submitBtn.addEventListener("click", () => {
+        if (logoInput.value == "") logo.style.borderColor = "#dc3545";
+        if (coverInput.value == "") cover.style.borderColor = "#dc3545";
+      });
+      // now to return the border color to the default when the user choose another image
+      logoInput.addEventListener("change", () => {
+        logo.style.borderColor = "#f8f9fa";
+      });
+      coverInput.addEventListener("change", () => {
+        cover.style.borderColor = "#f8f9fa";
+      });
     </script>
   </body>
 </html>

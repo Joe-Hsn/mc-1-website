@@ -87,9 +87,6 @@
                     alt="new meal"
                   />
                 </label>
-                <div class="invalid-feedback">
-                  يجب ان تكون الصورة اكبر من 100 كيلوبايت
-                </div>
                 <span id="meal-name"></span>
                 <span id="meal-size"></span>
                 <input
@@ -102,6 +99,7 @@
                   multiple="false"
                   required
                 />
+                <div class="invalid-feedback">يجب اضافة صورة للوجبة!</div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -253,6 +251,17 @@
           false
         );
       })();
+      // now to make the border color of the image red when the validation fails
+      let mealPicture = document.getElementById("mealPicture"),
+        submitBtn = document.querySelector("button[type='submit']"),
+        mealInput = document.getElementById("meal-picture");
+      submitBtn.addEventListener("click", () => {
+        if (mealInput.value == "") mealPicture.style.borderColor = "#dc3545";
+      });
+      // now to return the border color to the default when the user choose another image
+      mealInput.addEventListener("change", () => {
+        mealPicture.style.borderColor = "#f8f9fa";
+      });
     </script>
   </body>
 </html>
