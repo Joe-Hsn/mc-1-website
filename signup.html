@@ -251,6 +251,18 @@
           false
         );
       })();
+      // now to prevent the user from submitting the form if the passwords don't match
+      let form = document.querySelector(".needs-validation");
+      form.addEventListener(
+        "submit",
+        (event) => {
+          if (password.value !== confirmPassword.value) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        },
+        false
+      );
     </script>
   </body>
 </html>

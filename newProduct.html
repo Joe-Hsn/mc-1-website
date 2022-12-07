@@ -73,7 +73,7 @@
       <div class="container py-5">
         <div class="row">
           <div class="col">
-            <form action="#" method="post">
+            <form action="#" method="post" class="needs-validation" novalidate>
               <div class="title h3 mb-5">
                 <i class="fa-solid fa-plus me-1"></i>
                 اضافة وجبة جديدة
@@ -87,6 +87,9 @@
                     alt="new meal"
                   />
                 </label>
+                <div class="invalid-feedback">
+                  يجب ان تكون الصورة اكبر من 100 كيلوبايت
+                </div>
                 <span id="meal-name"></span>
                 <span id="meal-size"></span>
                 <input
@@ -110,6 +113,9 @@
                   required
                 />
                 <label for="mealName">اسم الوجبة</label>
+                <div class="invalid-feedback">
+                  يجب ان يكون اسم الوجبة اكثر من 3 حروف
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -123,6 +129,9 @@
                   required
                 />
                 <label for="mealPrice">سعر الوجبة</label>
+                <div class="invalid-feedback">
+                  يجب ان يكون السعر اكبر من 10 ريال
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <select
@@ -131,13 +140,14 @@
                   aria-label="اختر نوع الوجبة"
                   required
                 >
-                  <option selected>طلبية كاملة</option>
+                  <option value="طلبية كاملة">طلبية كاملة</option>
                   <option value="شطيرة">شطيرة</option>
                   <option value="مشروب">مشروب</option>
                   <option value="حلوي">حلوي</option>
                   <option value="وجبة عائلية">وجبة عائلية</option>
                 </select>
                 <label for="meal-type">اختر نوع الوجبة</label>
+                <div class="invalid-feedback">يجب اختيار نوع الوجبة!</div>
               </div>
               <div class="form-floating mb-3">
                 <textarea
@@ -149,6 +159,7 @@
                   required
                 ></textarea>
                 <label for="restaurantDisc">وصف الوجبة</label>
+                <div class="invalid-feedback">يجب ادخال وصف للوجبة!</div>
               </div>
               <div class="d-grid">
                 <button type="submit" class="btn btn-warning btn-lg">
@@ -224,6 +235,24 @@
           e.target.value = value.slice(1);
         }
       });
+      (() => {
+        "use strict";
+        // Fetch the form to apply custom Bootstrap validation styles to
+        const form = document.querySelector(".needs-validation");
+        // prevent submission
+        form.addEventListener(
+          "submit",
+          (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      })();
     </script>
   </body>
 </html>
